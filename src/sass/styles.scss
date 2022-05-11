@@ -1,0 +1,81 @@
+@charset "utf-8";
+
+// See: https://bulma.io/documentation/customize/with-node-sass/
+
+$fa-font-path: "../../webfonts";
+$fa-font-display: "auto";
+
+@charset "utf-8";
+
+// Import a Google Font
+//@import url('https://fonts.googleapis.com/css?family=Nunito:400,700');
+
+$size-1: 3rem;
+
+// Set your brand colors
+$black: #000;
+$white: #fff;
+$blue: #264d73;
+$purple: #8f620d;
+//$pink: #8f620d;
+//$brown: #757763;
+$beige-light: #D0D1CD;
+//$beige-lighter: #EFF0EB;
+
+//$link: #8f620d;
+//$link-hover: $white;
+
+// Update Bulma's global variables
+$family-sans-serif: sans-serif;
+
+
+// Update some of Bulma's component variables
+$body-background-color: $beige-light;
+$control-border-width: 2px;
+$input-border-color: transparent;
+$input-shadow: none;
+
+
+.hero-body {
+  //background-color: rgba(0,0,0,0.65);
+  width: 100%;
+  height: 100%;
+}
+.hero {
+  //background-image: url("https://bandmatch.ch/img/main3.jpg");
+  background-attachment: scroll;
+  background-position: top center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+}
+
+.hero.is-primary {
+  background: linear-gradient(to top right, $blue 10%, $beige-light);
+}
+
+@import "node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss";
+@import "node_modules/@fortawesome/fontawesome-free/scss/solid.scss";
+@import "node_modules/@fortawesome/fontawesome-free/scss/brands.scss";
+
+@import "node_modules/bulma/bulma.sass";
+
+
+#cookiebar {
+  position: fixed;
+  display: block;
+  //top: 0;
+  bottom: 0;
+  //height: 2em;
+  //left: 0;
+  //right: 0;
+  padding: 0em;
+  overflow: hidden;
+  z-index: 1000;
+  //pointer-events: none;
+  width: 100%;
+}
+
+a.navbar-item.is-active {
+  color: $purple;
+}
