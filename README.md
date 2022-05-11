@@ -34,8 +34,8 @@ Minified build for PROD.
 npm run build-prod
 ```
 
-#
-
+# Run
+Set the root of your webserver to the "public" directory or just open the HTML files locally in your browser.
 
 ## Disclaimer & License
 
