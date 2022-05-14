@@ -2,7 +2,6 @@ const $ = require('cash-dom');
 const Cookies = require('js-cookie');
 const COOKIE_NAME = 'cookie-consent';
 
-
 $(document).ready(function () {
     /**
      * Navbar Burger
@@ -37,4 +36,6 @@ $(document).ready(function () {
     $('#btn-cookiebar-delete').on('click', function () {
         $('#cookiebar').addClass('is-hidden');
     });
+
+    console.log('Test abcd xxx');
 });

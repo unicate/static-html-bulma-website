@@ -1,24 +1,24 @@
 {
   "name": "static-html-bulma-website",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "",
   "main": "src/index.js",
   "watch": {
-    "html-build-dev": {
+    "dev:build:html": {
       "patterns": [
         "src/html"
       ],
       "extensions": "html",
       "quiet": false
     },
-    "js-build-dev": {
+    "dev:build:js": {
       "patterns": [
         "src/js"
       ],
       "extensions": "js",
       "quiet": false
     },
-    "css-build-dev": {
+    "dev:build:css": {
       "patterns": [
         "src/sass"
       ],
@@ -28,16 +28,17 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "npm-watch",
     "clean": "del public/dist/*",
-    "build": "npm run html-build-dev && npm run js-build-dev && npm run css-build-dev",
-    "build-prod": "npm run html-build-prod && npm run js-build-prod && npm run css-build-prod",
-    "js-build-dev": "browserify src/js/main.js -o public/dist/js/bundle.$npm_package_version.js",
-    "js-build-prod": "npm run js-build-dev && uglifyjs public/dist/js/bundle.$npm_package_version.js -o public/dist/js/bundle.$npm_package_version.js",
-    "css-build-dev": "node-sass --omit-source-map-url src/sass/styles.scss public/dist/css/styles.$npm_package_version.css",
-    "css-build-prod": "node-sass --omit-source-map-url src/sass/styles.scss public/dist/css/styles.$npm_package_version.css --output-style compressed",
-    "html-build-dev": "html-includes --src src/html --dest public",
-    "html-build-prod": "html-includes --src src/html --dest public --minify"
+    "dev": "npm-watch",
+    "dev:build:js": "browserify src/js/main.js -o public/dist/js/bundle.js",
+    "dev:build:css": "node-sass --omit-source-map-url src/sass/styles.scss public/dist/css/styles.css",
+    "dev:build:html": "html-includes --src src/html --dest public",
+    "dev:build": "npm run dev:build:js && npm run dev:build:css && npm run dev:build:html",
+    "prod:build:js" : "npm run dev:build:js && uglifyjs public/dist/js/bundle.js -o public/dist/js/bundle.js",
+    "prod:build:css" : "node-sass --omit-source-map-url src/sass/styles.scss public/dist/css/styles.css --output-style compressed",
+    "prod:build:html": "html-includes --src src/html --dest public --minify",
+    "prod:build": "npm run prod:build:js && npm run prod:build:css && npm run prod:build:html",
+    "versioning" : "node ./src/build/versioning.js"
   },
   "author": "",
   "license": "ISC",
@@ -53,6 +54,7 @@
     "html-includes": "^4.4.1",
     "node-sass": "^7.0.1",
     "npm-watch": "^0.11.0",
+    "replace-in-file": "^6.3.2",
     "sass": "^1.49.8",
     "uglify-js": "^3.15.4"
   }
