@@ -28,17 +28,17 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "clean": "del public/dist/*",
+    "clean": "del public/dist/* && del public/*.html",
     "dev": "npm-watch",
     "dev:build:js": "browserify src/js/main.js -o public/dist/js/bundle.js",
     "dev:build:css": "node-sass --omit-source-map-url src/sass/styles.scss public/dist/css/styles.css",
-    "dev:build:html": "html-includes --src src/html --dest public",
+    "dev:build:html": "html-includes --src src/html --dest public && npm run versioning",
     "dev:build": "npm run dev:build:js && npm run dev:build:css && npm run dev:build:html",
     "prod:build:js" : "npm run dev:build:js && uglifyjs public/dist/js/bundle.js -o public/dist/js/bundle.js",
     "prod:build:css" : "node-sass --omit-source-map-url src/sass/styles.scss public/dist/css/styles.css --output-style compressed",
-    "prod:build:html": "html-includes --src src/html --dest public --minify",
-    "prod:build": "npm run prod:build:js && npm run prod:build:css && npm run prod:build:html",
-    "versioning" : "node ./src/build/versioning.js"
+    "prod:build:html": "html-includes --src src/html --dest public --minify && npm run versioning",
+    "prod:build": "npm run clean && npm run prod:build:js && npm run prod:build:css && npm run prod:build:html",
+    "versioning": "replace-in-file '/@VERSION@/g' v$npm_package_version-$(date \"+%s\") public/**/*.html --verbose --isRegex"
   },
   "author": "",
   "license": "ISC",

@@ -37,5 +37,5 @@ $(document).ready(function () {
         $('#cookiebar').addClass('is-hidden');
     });
 
-    console.log('Test abcd xxx');
+    console.log('Hello!!!');
 });
