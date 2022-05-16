@@ -23,7 +23,7 @@ npm run dev
 ```
 or just local DEV build
 ```
-npm run build
+npm run dev:build
 ```
 
 ### Production
@@ -31,7 +31,7 @@ npm run build
 Minified build for PROD.
 
 ```
-npm run build-prod
+npm run prod:build
 ```
 
 # Run

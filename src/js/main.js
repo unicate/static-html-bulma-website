@@ -37,5 +37,8 @@ $(document).ready(function () {
         $('#cookiebar').addClass('is-hidden');
     });
 
+    /**
+     * Just some console log...
+     */
     console.log('Hello!!!');
 });

@@ -31,11 +31,11 @@
     "clean": "del public/dist/* && del public/*.html",
     "dev": "npm-watch",
     "dev:build:js": "browserify src/js/main.js -o public/dist/js/bundle.js",
-    "dev:build:css": "node-sass --omit-source-map-url src/sass/styles.scss public/dist/css/styles.css",
+    "dev:build:css": "sass src/sass/styles.scss public/dist/css/styles.css",
     "dev:build:html": "html-includes --src src/html --dest public && npm run versioning",
     "dev:build": "npm run dev:build:js && npm run dev:build:css && npm run dev:build:html",
-    "prod:build:js" : "npm run dev:build:js && uglifyjs public/dist/js/bundle.js -o public/dist/js/bundle.js",
-    "prod:build:css" : "node-sass --omit-source-map-url src/sass/styles.scss public/dist/css/styles.css --output-style compressed",
+    "prod:build:js": "npm run dev:build:js && uglifyjs public/dist/js/bundle.js -o public/dist/js/bundle.js",
+    "prod:build:css": "sass src/sass/styles.scss public/dist/css/styles.css --style compressed --no-source-map",
     "prod:build:html": "html-includes --src src/html --dest public --minify && npm run versioning",
     "prod:build": "npm run clean && npm run prod:build:js && npm run prod:build:css && npm run prod:build:html",
     "versioning": "replace-in-file '/@VERSION@/g' v$npm_package_version-$(date \"+%s\") public/**/*.html --verbose --isRegex"
@@ -47,15 +47,14 @@
     "js-cookie": "^3.0.1"
   },
   "devDependencies": {
-    "@fortawesome/fontawesome-free": "^6.0.0",
+    "@fortawesome/fontawesome-free": "^6.1.1",
     "browserify": "^17.0.0",
-    "bulma": "^0.9.3",
+    "bulma": "^0.9.4",
     "del-cli": "^4.0.1",
     "html-includes": "^4.4.1",
-    "node-sass": "^7.0.1",
     "npm-watch": "^0.11.0",
     "replace-in-file": "^6.3.2",
-    "sass": "^1.49.8",
-    "uglify-js": "^3.15.4"
+    "sass": "^1.51.0",
+    "uglify-js": "^3.15.5"
   }
 }
