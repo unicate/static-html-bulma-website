@@ -2,11 +2,11 @@
 
 ## What's included?
 
-- [Bulma](https://bulma.io/): Is a modern CSS framework that just works.
-- [Fontawesome-free](https://fontawesome.com/icons?m=free): Icons are ready to use.
+- [Bulma](https://bulma.io/): A modern CSS framework that just works.
+- [Fontawesome-free](https://fontawesome.com/icons?m=free): Icons ready to use.
 - [Cash-Dom](https://github.com/fabiospampinato/cash): Small jQuery alternative.
+- [Parcel](https://parceljs.org/): The zero configuration build tool for the web.
 - [posthtml-include](https://www.npmjs.com/package/posthtml-include): HTML compilation with partial includes.
-- [Parcel](https://parceljs.org/): The zero configuration build tool.
 
 ## Install
 
