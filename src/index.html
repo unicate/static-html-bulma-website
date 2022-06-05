@@ -1,13 +1,16 @@
-<!DOCTYPE html>
-<html lang="de">
+<!doctype html>
+<html lang="en">
 <head>
-    ${require('./inc/_head.html')
-        title="Home"
-        keywords="Blabla Keywords"
-        description="Blabla Description"}
+    <include src="html/partials/_head.html"
+             locals='{
+                 "title": "Parcel Demo!",
+                 "keywords": "Parcel Demo Keywords",
+                 "description": "Parcel Demo Description"
+                 }'>
+    </include>
 </head>
 <body>
-${require('./inc/_nav.html')}
+<include src="html/partials/_nav.html"></include>
 <section class="hero is-medium is-primary">
     <div class="hero-body">
         <div class="container">
@@ -38,7 +41,7 @@ ${require('./inc/_nav.html')}
                         page, or simply create a new one!
                         <br>
                         For example, this page is <strong>only</strong> built with the following <strong>Bulma
-                            elements</strong>:
+                        elements</strong>:
                     </p>
                 </div>
                 <table class="table is-bordered is-fullwidth">
@@ -110,7 +113,7 @@ ${require('./inc/_nav.html')}
         </div>
     </div>
 </section>
-${require('./inc/_cookiebar.html')}
-${require('./inc/_footer.html')}
+<include src="html/partials/_cookiebar.html"></include>
+<include src="html/partials/_footer.html"></include>
 </body>
 </html>

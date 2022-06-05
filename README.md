@@ -5,7 +5,8 @@
 - [Bulma](https://bulma.io/): Is a modern CSS framework that just works.
 - [Fontawesome-free](https://fontawesome.com/icons?m=free): Icons are ready to use.
 - [Cash-Dom](https://github.com/fabiospampinato/cash): Small jQuery alternative.
-- [html-includes](https://www.npmjs.com/package/html-includes): HTML compilation with partial includes.
+- [posthtml-include](https://www.npmjs.com/package/posthtml-include): HTML compilation with partial includes.
+- [Parcel](https://parceljs.org/): The zero configuration build tool.
 
 ## Install
 
@@ -21,17 +22,13 @@ Build for DEV and watch for changes.
 ```
 npm run dev
 ```
-or just local DEV build
-```
-npm run dev:build
-```
 
 ### Production
 
 Minified build for PROD.
 
 ```
-npm run prod:build
+npm run build
 ```
 
 # Run

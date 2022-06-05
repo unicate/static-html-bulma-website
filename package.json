@@ -1,57 +1,30 @@
 {
-  "name": "static-html-bulma-website",
-  "version": "1.0.2",
+  "name": "parcel-demo",
+  "version": "1.0.0",
   "description": "",
-  "main": "src/index.js",
-  "watch": {
-    "dev:build:html": {
-      "patterns": [
-        "src/html"
-      ],
-      "extensions": "html"
-    },
-    "dev:build:js": {
-      "patterns": [
-        "src/js"
-      ],
-      "extensions": "js"
-    },
-    "dev:build:css": {
-      "patterns": [
-        "src/sass"
-      ],
-      "extensions": "scss"
-    }
-  },
+  "source": [
+    "src/index.html",
+    "src/disclaimer.html"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "clean": "del public/dist/* && del public/*.html",
-    "dev": "npm-watch",
-    "dev:build:js": "browserify src/js/main.js -o public/dist/js/bundle.js",
-    "dev:build:css": "sass src/sass/styles.scss public/dist/css/styles.css",
-    "dev:build:html": "html-includes --src src/html --dest public",
-    "dev:build": "npm run dev:build:js && npm run dev:build:css && npm run dev:build:html",
-    "prod:build:js": "npm run dev:build:js && uglifyjs public/dist/js/bundle.js -o public/dist/js/bundle.js",
-    "prod:build:css": "sass src/sass/styles.scss public/dist/css/styles.css --style compressed --no-source-map",
-    "prod:build:html": "html-includes --src src/html --dest public --minify",
-    "prod:build": "npm run clean && npm run prod:build:js && npm run prod:build:css && npm run prod:build:html",
-    "versioning": "replace-in-file '/@VERSION@/g' v$npm_package_version-$(date \"+%s\") public/**/*.html --verbose --isRegex"
+    "clean": "del public/* && del .parcel-cache",
+    "dev": "parcel --dist-dir public",
+    "build": "npm run clean && parcel build --dist-dir public --public-url ./ --no-source-maps"
   },
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "cash-dom": "^8.1.1",
-    "js-cookie": "^3.0.1"
-  },
   "devDependencies": {
-    "@fortawesome/fontawesome-free": "^6.1.1",
-    "browserify": "^17.0.0",
+    "@parcel/transformer-sass": "^2.5.0",
     "bulma": "^0.9.4",
     "del-cli": "^4.0.1",
-    "html-includes": "^4.4.1",
-    "npm-watch": "^0.11.0",
-    "replace-in-file": "^6.3.2",
-    "sass": "^1.51.0",
-    "uglify-js": "^3.15.5"
+    "parcel": "^2.5.0",
+    "posthtml-include": "^1.7.4"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^6.1.1",
+    "bulma": "^0.9.4",
+    "cash-dom": "^8.1.1",
+    "js-cookie": "^3.0.1"
   }
 }
