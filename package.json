@@ -8,22 +8,19 @@
       "patterns": [
         "src/html"
       ],
-      "extensions": "html",
-      "quiet": false
+      "extensions": "html"
     },
     "dev:build:js": {
       "patterns": [
         "src/js"
       ],
-      "extensions": "js",
-      "quiet": false
+      "extensions": "js"
     },
     "dev:build:css": {
       "patterns": [
         "src/sass"
       ],
-      "extensions": "scss",
-      "quiet": false
+      "extensions": "scss"
     }
   },
   "scripts": {
@@ -32,11 +29,11 @@
     "dev": "npm-watch",
     "dev:build:js": "browserify src/js/main.js -o public/dist/js/bundle.js",
     "dev:build:css": "sass src/sass/styles.scss public/dist/css/styles.css",
-    "dev:build:html": "html-includes --src src/html --dest public && npm run versioning",
+    "dev:build:html": "html-includes --src src/html --dest public",
     "dev:build": "npm run dev:build:js && npm run dev:build:css && npm run dev:build:html",
     "prod:build:js": "npm run dev:build:js && uglifyjs public/dist/js/bundle.js -o public/dist/js/bundle.js",
     "prod:build:css": "sass src/sass/styles.scss public/dist/css/styles.css --style compressed --no-source-map",
-    "prod:build:html": "html-includes --src src/html --dest public --minify && npm run versioning",
+    "prod:build:html": "html-includes --src src/html --dest public --minify",
     "prod:build": "npm run clean && npm run prod:build:js && npm run prod:build:css && npm run prod:build:html",
     "versioning": "replace-in-file '/@VERSION@/g' v$npm_package_version-$(date \"+%s\") public/**/*.html --verbose --isRegex"
   },
