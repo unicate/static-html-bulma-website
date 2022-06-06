@@ -1,5 +1,7 @@
 # Static HTML Bulma Website
 
+A starter project for static HTML websites.
+
 ## What's included?
 
 - [Bulma](https://bulma.io/): A modern CSS framework that just works.
