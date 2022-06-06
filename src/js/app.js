@@ -1,5 +1,6 @@
 const $ = require('cash-dom');
 const Cookies = require('js-cookie');
+const PACKAGE_JSON = require('../../package.json');
 const COOKIE_NAME = 'cookie-consent';
 
 $(document).ready(function () {
@@ -40,5 +41,5 @@ $(document).ready(function () {
     /**
      * Just some console log...
      */
-    console.log('Hello!!!');
+    console.log('Hello!!!' + PACKAGE_JSON.version);
 });
